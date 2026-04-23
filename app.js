@@ -344,11 +344,11 @@ function renderAuthCard() {
         <form id="registerForm" class="form-grid">
           <div class="field">
             <label for="registerName">Full name</label>
-            <input id="registerName" name="name" placeholder="Ananya Sharma" required />
+            <input id="registerName" name="name" placeholder="enter name" required />
           </div>
           <div class="field">
             <label for="registerUsername">Username</label>
-            <input id="registerUsername" name="username" placeholder="ananyacodes" required />
+            <input id="registerUsername" name="username" placeholder="username" required />
           </div>
           <div class="field">
             <label for="registerEmail">Email</label>
@@ -366,7 +366,7 @@ function renderAuthCard() {
         </form>
       `;
 
-      document.getElementById("registerForm").addEventListener("submit", handleRegister);
+      document.getElementById("registerForm").onsubmit = handleRegister;
     };
 
     const renderLogin = () => {

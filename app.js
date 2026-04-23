@@ -166,17 +166,10 @@ async function loadExploreFeed() {
 async function loadDefaultProfile() {
   if (state.currentUser) {
     await loadProfile(state.currentUser.id, true);
-    return;
-  }
-
-  const users = await apiFetch("/users", { skipFlash: true });
-  if (users.users.length) {
-    await loadProfile(users.users[0].id, true);
   } else {
     state.profile = null;
   }
 }
-
 async function loadProfile(userId, silent = false) {
   const data = await apiFetch(`/users/${userId}`, { skipFlash: silent });
   state.profile = data;

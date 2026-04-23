@@ -14,7 +14,7 @@ const port = process.env.PORT || 5000;
 
 app.use(morgan("dev"));
 app.use(express.json());
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(__dirname));
 
 app.get("/api/health", (_req, res) => {
   res.json({ ok: true });
@@ -25,7 +25,7 @@ app.use("/api/users", userRoutes);
 app.use("/api/projects", projectRoutes);
 
 app.get("*", (_req, res) => {
-  res.sendFile(path.join(__dirname, "public", "index.html"));
+  res.sendFile(path.join(__dirname, "index.html"));
 });
 
 connectDB()

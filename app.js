@@ -1,4 +1,4 @@
-const API_BASE = "/api";
+const API_BASE = "https://peerstack-1-1.onrender.com/api";
 const AUTH_KEY = "peerstack_token";
 
 const state = {

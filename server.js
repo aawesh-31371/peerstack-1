@@ -31,7 +31,7 @@ app.get("*", (_req, res) => {
 connectDB()
   .then(() => {
     app.listen(port, () => {
-      console.log(`PeerStack server running on http://localhost:${port}`);
+      console.log(`Server running on port ${port}`);
     });
   })
   .catch((error) => {

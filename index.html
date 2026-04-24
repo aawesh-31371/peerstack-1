@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -67,20 +67,8 @@
 
       <div class="hero-right" id="heroStats"></div>
     </section>
-      <!-- </header>
 
-      <main class="layout">
-        <section class="hero-card glass">
-          <div class="hero-copy">
-            <p class="hero-tag">Instagram-style purple UI for project discovery</p>
-            <h2>Follow builders, review projects, and grow your creative circle.</h2>
-            <p>
-              Home shows projects from people you follow. Explore helps you search profiles and
-              projects. Profile is where you manage your page and upload your own work.
-            </p>
-          </div>
-          <div class="hero-stats" id="heroStats"></div>
-        </section> -->
+   
 
         <div id="flashHost"></div>
 
@@ -151,4 +139,201 @@
 
     <script src="app.js"></script>
   </body>
+</html> -->
+<!-- --------------------------------------------------------------------------------------------------- -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PeerStack</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Sora:wght@600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <div class="app-shell">
+
+    <!-- TOP HEADER -->
+    <header class="topbar">
+
+      <div class="logo-area">
+        <p class="eyebrow">Project Social Network</p>
+        <h1>PeerStack</h1>
+        <p>Build. Connect. Grow.</p>
+      </div>
+
+      <nav class="main-nav">
+        <button id="navHomeBtn" class="nav-btn active">Home</button>
+        <button id="navExploreBtn" class="nav-btn">Explore</button>
+        <button id="navProfileBtn" class="nav-btn">Profile</button>
+      </nav>
+
+      <div class="topbar-actions">
+        <button id="logoutBtn" class="primary-btn hidden">Logout</button>
+      </div>
+
+    </header>
+
+
+    <!-- MAIN LAYOUT -->
+    <main class="layout">
+
+      <!-- HERO SECTION -->
+      <section class="hero-card premium-hero">
+        <div class="hero-left">
+          <p class="hero-badge">Project Social Network</p>
+
+          <h2>
+            Discover creators. Review projects.
+            Build your network.
+          </h2>
+
+          <p>
+            PeerStack helps developers showcase projects,
+            connect with creators, and grow through
+            collaboration and feedback.
+          </p>
+
+          <div class="hero-buttons">
+            <button class="primary-btn">Start Exploring</button>
+            <button class="secondary-btn">View Projects</button>
+          </div>
+        </div>
+
+        <div class="hero-right" id="heroStats"></div>
+      </section>
+
+
+      <!-- FLASH MESSAGE -->
+      <div id="flashHost"></div>
+
+
+      <!-- HOME SCREEN -->
+      <section id="homeScreen" class="screen">
+
+        <div class="screen-header panel">
+          <div>
+            <p class="section-label">Home feed</p>
+            <h3>Projects from your network</h3>
+            <p id="homeIntro" class="helper"></p>
+          </div>
+        </div>
+
+        <div id="homeFeed" class="feed-list"></div>
+
+      </section>
+
+
+      <!-- EXPLORE SCREEN -->
+      <section id="exploreScreen" class="screen hidden">
+
+        <div class="panel search-panel">
+
+          <div class="search-head">
+            <div>
+              <p class="section-label">Explore</p>
+              <h3>Search people and projects</h3>
+            </div>
+
+            <div class="search-tabs">
+              <button id="projectSearchTab" class="pill-btn active">
+                Projects
+              </button>
+
+              <button id="profileSearchTab" class="pill-btn">
+                Profiles
+              </button>
+            </div>
+          </div>
+
+          <div class="search-input-row">
+            <input
+              id="searchInput"
+              class="search-input"
+              placeholder="Search by project name, GitHub, username, or bio"
+            />
+
+            <button id="clearSearchBtn" class="secondary-btn">
+              Clear
+            </button>
+          </div>
+
+          <div id="searchResults" class="search-results hidden"></div>
+
+        </div>
+
+
+        <div class="screen-header panel">
+          <div>
+            <p class="section-label">Discover</p>
+            <h3>Explore all uploaded projects</h3>
+            <p class="helper">
+              Browse the full community and open any creator profile from here.
+            </p>
+          </div>
+        </div>
+
+        <div id="exploreFeed" class="feed-list"></div>
+
+      </section>
+
+
+      <!-- PROFILE SCREEN -->
+      <section id="profileScreen" class="screen hidden">
+
+        <div class="content-grid">
+
+          <aside
+            class="panel profile-panel"
+            id="profileSidebar">
+          </aside>
+
+          <section class="profile-main">
+
+            <div id="authCard" class="panel"></div>
+
+            <div id="uploadCard" class="panel hidden"></div>
+
+            <div class="panel">
+              <div class="feed-header">
+                <div>
+                  <p class="section-label">Profile projects</p>
+                  <h3 id="profileProjectsHeading">
+                    Uploaded projects
+                  </h3>
+                </div>
+              </div>
+
+              <div
+                id="profileProjects"
+                class="profile-projects">
+              </div>
+            </div>
+
+          </section>
+
+        </div>
+
+      </section>
+
+    </main>
+
+  </div>
+
+  <script src="app.js"></script>
+
+</body>
 </html>
